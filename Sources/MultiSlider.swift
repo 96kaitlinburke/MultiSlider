@@ -6,8 +6,6 @@
 //  Copyright © 2016 Yonat Sharon. All rights reserved.
 //
 
-import AvailableHapticFeedback
-import SweeterSwift
 import UIKit
 
 @IBDesignable
@@ -30,9 +28,6 @@ open class MultiSlider: UIControl {
 
     /// snap thumbs to specific values, evenly spaced. (default = 0: allow any value)
     @IBInspectable open dynamic var snapStepSize: CGFloat = 0 { didSet { adjustValuesToStepAndLimits() } }
-
-    /// generate haptic feedback when hitting snap steps
-    @IBInspectable open dynamic var isHapticSnap: Bool = true
 
     @IBInspectable open dynamic var thumbCount: Int {
         get {
@@ -200,7 +195,6 @@ open class MultiSlider: UIControl {
     let margin: CGFloat = 32
     var isSettingValue = false
     lazy var defaultThumbImage: UIImage? = .circle()
-    var selectionFeedbackGenerator = AvailableHapticFeedback()
 
     // MARK: - Overrides
 
